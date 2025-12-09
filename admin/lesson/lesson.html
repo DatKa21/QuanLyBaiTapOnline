@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="vi">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Chi tiết Bài giảng</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <style>
+      @import url("https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap");
+      body {
+        font-family: "Inter", sans-serif;
+        background-color: #f4f6f9;
+      }
+    </style>
+  </head>
+  <body class="min-h-screen flex flex-col">
+    <!-- Header / Navigation -->
+    <header class="bg-white shadow-md">
+      <div class="container mx-auto px-6 py-4">
+        <h1 class="text-3xl font-extrabold text-gray-900">Quản lí Môn học</h1>
+        <p class="text-sm text-gray-500 mt-1">
+          Môn học:
+          <span class="font-semibold text-blue-600"
+            >Lập trình Web Cơ bản (WEB101)</span
+          >
+        </p>
+      </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="container mx-auto px-6 py-8 flex-grow">
+      <!-- Nút Trở về Home -->
+      <a
+        href="../home/home.html"
+        class="text-blue-600 hover:text-blue-800 mb-6 flex items-center space-x-1"
+      >
+        <i data-lucide="arrow-left" class="w-4 h-4"></i>
+        <span>Trở về Danh sách Môn học</span>
+      </a>
+
+      <!-- Tabs -->
+      <div class="border-b border-gray-200 mb-6">
+        <nav class="flex space-x-6 -mb-px">
+          <!-- Tab Bài giảng (Đang active) -->
+          <button
+            class="py-3 px-4 text-sm font-medium border-b-2 border-indigo-600 text-indigo-600"
+          >
+            Quản lý Bài Giảng
+          </button>
+          <!-- Tab Quản lý Bài tập (Chuyển sang trang chấm điểm/quản lý bài tập) -->
+          <a
+            href="submission_grading.html"
+            class="py-3 px-4 text-sm font-medium border-b-2 border-transparent text-gray-500 hover:text-gray-700 hover:border-gray-300"
+          >
+            Quản lý Bài Tập
+          </a>
+        </nav>
+      </div>
+
+      <!-- Quản lý Bài Giảng Content -->
+      <div class="bg-white p-6 rounded-xl shadow-lg">
+        <div class="flex justify-between items-center mb-6">
+          <h3 class="text-xl font-semibold text-gray-800">
+            Danh sách Bài Giảng
+          </h3>
+          <button
+            class="bg-green-600 text-white px-4 py-2 rounded-lg hover:bg-green-700 transition flex items-center space-x-2 text-sm"
+          >
+            <i data-lucide="plus" class="w-4 h-4"></i>
+            <span>Thêm Bài Giảng</span>
+          </button>
+        </div>
+
+        <div class="space-y-4">
+          <!-- Bài Giảng 1: Video -->
+          <div
+            class="p-4 bg-gray-50 rounded-lg border border-l-4 border-green-500 flex justify-between items-center"
+          >
+            <div class="flex items-center space-x-3">
+              <i data-lucide="monitor-play" class="w-6 h-6 text-green-600"></i>
+              <div>
+                <p class="font-medium text-gray-800">
+                  Bài 1: Giới thiệu HTML5 và Cấu trúc cơ bản
+                </p>
+                <span class="text-xs text-gray-500 italic"
+                  >Tài liệu: Video Clip (YouTube Link)</span
+                >
+              </div>
+            </div>
+            <div class="flex items-center space-x-4">
+              <!-- LABEL BÀI TẬP Ở CUỐI BÀI GIẢNG (Chuyển trang) -->
+              <a
+                href="submission_grading.html"
+                class="bg-blue-600 text-white px-3 py-1 rounded-full text-sm font-semibold hover:bg-blue-700 transition"
+              >
+                Bài Tập
+                <i data-lucide="chevron-right" class="w-4 h-4 inline ml-1"></i>
+              </a>
+              <button class="text-gray-500 hover:text-yellow-600">
+                <i data-lucide="edit" class="w-5 h-5"></i>
+              </button>
+              <button class="text-gray-500 hover:text-red-600">
+                <i data-lucide="trash-2" class="w-5 h-5"></i>
+              </button>
+            </div>
+          </div>
+
+          <!-- Bài Giảng 2: Word/PPT -->
+          <div
+            class="p-4 bg-gray-50 rounded-lg border border-l-4 border-green-500 flex justify-between items-center"
+          >
+            <div class="flex items-center space-x-3">
+              <i data-lucide="file-text" class="w-6 h-6 text-green-600"></i>
+              <div>
+                <p class="font-medium text-gray-800">
+                  Bài 2: Các thẻ HTML và Thuộc tính cơ bản
+                </p>
+                <span class="text-xs text-gray-500 italic"
+                  >Tài liệu: File Word (.docx)</span
+                >
+              </div>
+            </div>
+            <div class="flex items-center space-x-4">
+              <!-- LABEL BÀI TẬP Ở CUỐI BÀI GIẢNG (Chuyển trang) -->
+              <a
+                href="submission_grading.html"
+                class="bg-blue-600 text-white px-3 py-1 rounded-full text-sm font-semibold hover:bg-blue-700 transition"
+              >
+                Bài Tập
+                <i data-lucide="chevron-right" class="w-4 h-4 inline ml-1"></i>
+              </a>
+              <button class="text-gray-500 hover:text-yellow-600">
+                <i data-lucide="edit" class="w-5 h-5"></i>
+              </button>
+              <button class="text-gray-500 hover:text-red-600">
+                <i data-lucide="trash-2" class="w-5 h-5"></i>
+              </button>
+            </div>
+          </div>
+
+          <!-- Form mẫu để upload bài giảng (chỉ là giao diện) -->
+          <div class="mt-8 pt-4 border-t border-gray-200">
+            <h4 class="text-lg font-bold mb-4">
+              Form Thêm/Sửa Bài Giảng (Mô phỏng)
+            </h4>
+            <form class="space-y-4 bg-white p-4 rounded-lg shadow-inner">
+              <input
+                type="text"
+                placeholder="Tiêu đề Bài giảng"
+                class="w-full p-2 border border-gray-300 rounded-lg focus:ring-blue-500 focus:border-blue-500"
+              />
+              <select class="w-full p-2 border border-gray-300 rounded-lg">
+                <option>Chọn loại tài liệu</option>
+                <option>File Word (.doc/.docx)</option>
+                <option>File PowerPoint (.ppt/.pptx)</option>
+                <option>Video Clip (Link)</option>
+                <option>File Ảnh (.jpg/.png)</option>
+              </select>
+              <input
+                type="file"
+                class="w-full p-2 border border-gray-300 rounded-lg"
+              />
+              <button
+                type="submit"
+                class="bg-indigo-500 text-white px-4 py-2 rounded-lg hover:bg-indigo-600 transition"
+              >
+                Lưu Bài Giảng
+              </button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </main>
+
+    <script>
+      lucide.createIcons();
+    </script>
+  </body>
+</html>
