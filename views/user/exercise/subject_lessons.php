@@ -1,7 +1,5 @@
 <?php
-// ===============================
 // 1. SESSION & AUTH
-// ===============================
 session_start();
 
 // Kiểm tra đăng nhập
@@ -12,14 +10,9 @@ if (!isset($_SESSION['user_id'])) {
 
 require_once '../../../config/connectdb.php';
 
-// ===============================
 // 2. LOAD DATA - Lấy dữ liệu theo Schema của bạn
-// ===============================
 $subjects = [];
 
-/** * ĐÃ FIX: Lấy các cột đúng theo bảng 'subjects' của bạn:
- * subject_id, subject_name, description, credits
- */
 $sql_all_subjects = "SELECT subject_id, subject_name, description, credits FROM subjects ORDER BY created_at DESC";
 $result = $conn->query($sql_all_subjects);
 

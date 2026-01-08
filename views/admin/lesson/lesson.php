@@ -39,10 +39,19 @@ $conn->close();
 <body class="bg-gray-100 min-h-screen p-6">
 
 <!-- HEADER -->
-<div class="max-w-6xl mx-auto mb-6">
-    <h1 class="text-3xl font-bold text-gray-800">📚 Quản lý Môn học</h1>
-    <p class="text-gray-500 mt-1">Chọn môn học để quản lý bài giảng</p>
-    <a href="../home/home.php" class="text-blue-600 hover:underline">← Quản lý môn học</a>
+<div class="max-w-6xl mx-auto mb-6 flex justify-between items-center">
+    <div>
+        <h1 class="text-3xl font-bold text-gray-800">📚 Quản lý Môn học</h1>
+        <p class="text-gray-500 mt-1">Chọn môn học để quản lý bài giảng</p>
+        <a href="../home/home.php" class="text-blue-600 hover:underline">
+            ← Quản lý môn học
+        </a>
+    </div>
+    <a href="lesson_add.php"
+       class="bg-indigo-600 text-white px-4 py-2 rounded-lg hover:bg-indigo-700 flex items-center gap-2">
+        <i data-lucide="plus" class="w-4 h-4"></i>
+        Thêm môn học
+    </a>
 </div>
 
 <!-- CONTENT -->

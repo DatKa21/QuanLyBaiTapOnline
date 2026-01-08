@@ -1,7 +1,5 @@
 <?php
-// ===============================
 // 1. SESSION & AUTH
-// ===============================
 session_start();
 
 if (!isset($_SESSION['user_id'])) {
@@ -11,18 +9,14 @@ if (!isset($_SESSION['user_id'])) {
 
 require_once '../../../config/connectdb.php';
 
-// ===============================
 // 2. VALIDATE INPUT
-// ===============================
 if (!isset($_GET['subject_id']) || !is_numeric($_GET['subject_id'])) {
     die("ID môn học không hợp lệ");
 }
 
 $subject_id = (int)$_GET['subject_id'];
 
-// ===============================
 // 3. LOAD SUBJECT INFO
-// ===============================
 $sql_subject = "SELECT subject_id, subject_name, description FROM subjects WHERE subject_id = ?";
 $stmt = $conn->prepare($sql_subject);
 $stmt->bind_param("i", $subject_id);
@@ -34,9 +28,7 @@ if (!$subject) {
     die("Không tìm thấy môn học");
 }
 
-// ===============================
 // 4. LOAD LESSONS OF SUBJECT
-// ===============================
 $lessons = [];
 
 $sql_lessons = "

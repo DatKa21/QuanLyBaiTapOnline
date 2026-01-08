@@ -42,7 +42,7 @@ $stmt->close();
 function upload_multiple_files($input_name, $target_dir) {
     $files_data = [];
 
-    // Tự động tạo thư mục nếu chưa có (Giải quyết vấn đề bạn lo lắng)
+    // Tự động tạo thư mục
     if (!is_dir($target_dir)) {
         mkdir($target_dir, 0777, true);
     }
@@ -88,7 +88,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             '../../../uploads/lessons/'
         );
 
-        // 2. Nếu có link YouTube, thêm vào mảng lesson_files
+        // 2. link YouTube
         if (!empty($youtube_link)) {
             $lesson_files[] = [
                 'type' => 'youtube',
@@ -96,7 +96,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             ];
         }
 
-        // 3. Insert bài giảng (Cột lesson_files là JSON)
+        // 3. Insert bài giảng
         $sql = "INSERT INTO lessons (subject_id, lesson_name, lesson_files) VALUES (?, ?, ?)";
         $stmt = $conn->prepare($sql);
 
@@ -106,8 +106,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         if ($stmt->execute()) {
             $lesson_id = $stmt->insert_id;
 
-            // 4. Xử lý bài tập (Assignment) nếu có
-            // Lưu ý: Chỉ tạo assignment nếu có mô tả hoặc có file
+            // 4. Xử lý bài tập
             if (!empty($assignment_desc) || !empty($_FILES['assignment_files']['name'][0])) {
                 
                 $assignment_files = upload_multiple_files(

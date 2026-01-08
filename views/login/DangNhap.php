@@ -1,24 +1,15 @@
 <?php
 session_start();
 
-/* ========================
-   INIT BIẾN
-======================== */
 $success_message = '';
 $login_error = '';
 $email = $password = '';
 
-/* ========================
-   FLASH MESSAGE
-======================== */
 if (isset($_SESSION['success_message'])) {
     $success_message = $_SESSION['success_message'];
     unset($_SESSION['success_message']);
 }
 
-/* ========================
-   NẾU ĐÃ LOGIN → REDIRECT
-======================== */
 if (isset($_SESSION['user_id'], $_SESSION['role_id'])) {
     if ($_SESSION['role_id'] == 0) {
         header("Location: ../admin/home/home.php");
@@ -28,14 +19,8 @@ if (isset($_SESSION['user_id'], $_SESSION['role_id'])) {
     exit();
 }
 
-/* ========================
-   CONNECT DB
-======================== */
 require_once '../../config/connectdb.php';
 
-/* ========================
-   HANDLE LOGIN
-======================== */
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
     $email = trim($_POST['email'] ?? '');

@@ -1,7 +1,5 @@
 <?php
-// ===============================
 // 1. SESSION & AUTH
-// ===============================
 session_start();
 
 if (!isset($_SESSION['user_id'])) {
@@ -15,9 +13,7 @@ if (isset($_SESSION['role']) && $_SESSION['role'] == 0) {
     exit();
 }
 
-// ===============================
 // 2. DATA FROM SESSION
-// ===============================
 $user_id    = $_SESSION['user_id'];
 $user_name  = $_SESSION['username'] ?? 'Học viên';
 $user_email = $_SESSION['email'] ?? '';

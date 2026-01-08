@@ -2,7 +2,6 @@
 session_start();
 require_once '../../../config/connectdb.php';
 
-/* ================= AJAX SUBMIT ================= */
 if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['ajax_submit'])) {
     header('Content-Type: application/json');
 
@@ -118,7 +117,6 @@ function getYoutubeId($url) {
 
 <div class="grid lg:grid-cols-3 gap-6">
 
-<!-- LEFT -->
 <div class="lg:col-span-2 space-y-6">
 
 <!-- VIDEO -->

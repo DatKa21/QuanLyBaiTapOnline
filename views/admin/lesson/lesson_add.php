@@ -86,7 +86,6 @@ $conn->close();
 
       <!-- Main Content -->   
       <main class="container mx-auto px-6 py-8 flex-grow">
-        <!-- CẬP NHẬT: home.html thành home.php -->
         <a
           href="lesson.php" 
           class="text-blue-600 hover:text-blue-800 mb-6 flex items-center space-x-1"
@@ -107,7 +106,6 @@ $conn->close();
           <!-- Hiển thị thông báo (thành công/lỗi) -->
           <?php echo $message; ?>
 
-          <!-- Form: THAY ĐỔI METHOD="POST" và thêm enctype cho upload file -->
           <form method="POST" class="space-y-6" enctype="multipart/form-data">
             <!-- Tên Môn học -->
             <div>

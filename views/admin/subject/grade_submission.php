@@ -2,23 +2,14 @@
 session_start();
 require_once '../../../config/connectdb.php';
 
-/* ==============================
-   CHECK LOGIN (ADMIN)
-================================ */
 if (!isset($_SESSION['user_id']) || ($_SESSION['role'] ?? '') !== 'admin') {
     header("Location: ../../login/DangNhap.php");
     exit();
 }
 
-/* ==============================
-   GET submission_id
-================================ */
 $submission_id = intval($_GET['submission_id'] ?? 0);
 if ($submission_id <= 0) die("Thiếu submission_id");
 
-/* ==============================
-   LOAD SUBMISSION + USER + ASSIGNMENT
-================================ */
 $sql = "
     SELECT 
         s.submission_id,
@@ -43,9 +34,6 @@ if (!$data) die("Bài nộp không tồn tại");
 
 $files = json_decode($data['submission_files'], true) ?? [];
 
-/* ==============================
-   HANDLE GRADING
-================================ */
 $success = '';
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $grade = trim($_POST['grade']);
